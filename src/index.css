@@ -10,6 +10,9 @@
 .padding {
   padding: 10px 16%;
 }
+a {
+  transition: all 0.5s;
+}
 .List {
   transition: all 0.4s;
   font-size: 14px;
@@ -50,13 +53,41 @@
   box-shadow: inset 11px 43px 35px white;
 }
 .Interrestheader {
-  background-image: url("https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2020/07/CTA-bg.jpg");
+  background-image: url("/img/Interested.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 100%;
 }
 
+.icone {
+  transition: all 0.6s;
+  cursor: pointer;
+}
+.icone:hover {
+  background-color: rgb(141, 199, 55);
+}
+.footer_list {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.footer_list:hover {
+  color: rgb(62, 189, 62);
+}
+.Contactheader {
+  background-image: url("/img/Contact.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* better than 100% */
+}
+.Cartclorlo {
+  color: rgb(101 104 112);
+  transition: all 0.50s;
+}
+.Cartclorlo:hover{
+  color: black;
+  opacity: 1;
+}
 @media (max-width: 1500px) {
   .padding {
     padding: 10px 6%;

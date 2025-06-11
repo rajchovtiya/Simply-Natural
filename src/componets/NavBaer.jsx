@@ -45,8 +45,12 @@ const NavBaer = ({ Colorchange }) => {
                         About Us
                     </NavLink>
 
-                    <li className='cursor-pointer List'>Contact Us</li>
-                    <li className='cursor-pointer List'>My Account</li>
+                    <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
+                        Contact Us
+                    </NavLink>
+                    <NavLink to="/login" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
+                        My Account
+                    </NavLink>
                 </ul>
 
                 {/* Cart & User */}
