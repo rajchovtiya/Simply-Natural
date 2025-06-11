@@ -27,7 +27,7 @@ const About = ({ setColorchange }) => {
     setColorchange(`boxshadow`)
     return (
         <div className=''>
-            <div className=' bg-[#eae9ea]  h-[600px] w-[100%] relative About_header z-1'>
+            <div className=' bg-[#eae9ea]  h-[400px] w-[100%] relative About_header z-1'>
                 <div className='padding h-[100%] flex  justify-center flex-col'>
                     <p className='text-black font-medium text-7xl mt-12'>About Us</p>
                 </div>
@@ -89,7 +89,6 @@ const About = ({ setColorchange }) => {
                     </div>
 
                 </div>
-
             </div>
             <div>
                 <Interestedplants />

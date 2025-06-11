@@ -8,7 +8,7 @@
         "img": "/img/Plants1.png",
         "category": "Plants",
         "product__title": "Aluminum Plant",
-        "product-details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
+        "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
         "amount": 45.0,
         "Sale": "false"
       },
@@ -18,7 +18,7 @@
         "img": "/img/Plants2.png",
         "category": "Plants",
         "product__title": "Boncellensis Secullant",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 34.0,
         "Sale": "false"
       },
@@ -28,7 +28,7 @@
         "img": "/img/Plants3.png",
         "category": "Plants",
         "product__title": "Green Soil Lotus",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 34.0,
         "Saleamount":"28",
         "Sale": "true"
@@ -39,7 +39,7 @@
         "img": "/img/Plants4.png",
         "category": "Plants",
         "product__title": "Money Plant",
-        "product-details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
+        "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
         "amount": 20.0,
         "Saleamount":"54",
         "Sale": "true"
@@ -50,7 +50,7 @@
         "img": "/img/Plants5.png",
         "category": "Plants",
         "product__title": "Piorro Quisquam",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 32.0,
         "Saleamount":"23",
         "Sale": "true"
@@ -61,7 +61,7 @@
         "img": "/img/Plants6.png",
         "category": "Plants",
         "product__title": "Rattle Snake Tail",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 45.0,
         "Saleamount":"12",
         "Sale": "true"
@@ -77,7 +77,7 @@
         "img": "/img/Cactus1.png",
         "category": "Cactus",
         "product__title": "Ball Cactus",
-        "product-details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
+        "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
         "amount": 15.0,
         "Sale": "false"
       },
@@ -87,7 +87,7 @@
         "img": "/img/Cactus2.png",
         "category": "Cactus",
         "product__title": "Cleistocactus",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 25.0,
         "Sale": "false"
       },
@@ -97,7 +97,7 @@
         "img": "/img/Cactus3.png",
         "category": "Cactus",
         "product__title": "Green Soil Lotus",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 45.0,
         "Sale": "false"
       },
@@ -107,7 +107,7 @@
         "img": "/img/Cactus4.png",
         "category": "Cactus",
         "product__title": "Mini Astrophytum",
-        "product-details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
+        "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
         "amount": 32.0,
         "Sale": "false"
       },
@@ -117,7 +117,7 @@
         "img": "/img/Cactus5.png",
         "category": "Cactus",
         "product__title": "Mini San Pedro Cactus",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 12.0,
         "Sale": "false"
       },
@@ -127,7 +127,7 @@
         "img": "/img/Cactus6.png",
         "category": "Cactus",
         "product__title": "Old Lady Cactus",
-        "product-details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
+        "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 30.0,
         "Saleamount":"34",
         "Sale": "true"

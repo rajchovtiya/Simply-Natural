@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchData } from '../Store';
+import { CartAdd, fetchData } from '../Store';
 import { CiStar } from "react-icons/ci";
 import { IoBag } from 'react-icons/io5';
 
@@ -13,7 +13,21 @@ const PlantsHomeCart = () => {
             setCartData(action.payload)
         });
     }, [dispatch])
-    // console.log(cartData)
+    const addCart = (item) => {
+        console.log(item)
+        dispatch(
+            CartAdd({
+                id: item.id,
+                title: item.product__title,
+                img: item.img,
+                price: item.amount,
+                productdetails: item.product_details,
+                mounts: item.Saleamount
+            })
+        );
+
+    }
+
     return (
         <div className='mt-44 padding'>
             <h1 className='text-center text-4xl font-normal'>Featured Plants</h1>
@@ -23,11 +37,11 @@ const PlantsHomeCart = () => {
                     return item.product.map((datas, index) => {
                         {
                             return datas.HomeCart === "true" ? <div className='relative mt-5 cursor-pointer' key={index}>
-                                <img src={datas.img} alt="" className='w-[280px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} />
+                                <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[280px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} />
                                 {datas.Sale == "true" ? <div className='absolute top-2 left-2 bg-[#ffffff] shadow-lg p-2 px-4 rounded-3xl'>Sale!</div> : ""}
                                 <p className='opacity-60 text-[13px] mt-4'>{datas.category}</p>
                                 <h5 className='text-[17px] font-normal mt-3'>{datas.product__title}</h5>
-                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo'  /></div>
+                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo' onClick={() => {addCart(datas) }} /></div>
                                 <div className='flex items-center'>
                                     <CiStar className='cursor-pointer' />
                                     <CiStar className='cursor-pointer' />
