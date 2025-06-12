@@ -13,20 +13,7 @@ const PlantsHomeCart = () => {
             setCartData(action.payload)
         });
     }, [dispatch])
-    const addCart = (item) => {
-        console.log(item)
-        dispatch(
-            CartAdd({
-                id: item.id,
-                title: item.product__title,
-                img: item.img,
-                price: item.amount,
-                productdetails: item.product_details,
-                mounts: item.Saleamount
-            })
-        );
-
-    }
+    
 
     return (
         <div className='mt-44 padding'>
@@ -41,7 +28,7 @@ const PlantsHomeCart = () => {
                                 {datas.Sale == "true" ? <div className='absolute top-2 left-2 bg-[#ffffff] shadow-lg p-2 px-4 rounded-3xl'>Sale!</div> : ""}
                                 <p className='opacity-60 text-[13px] mt-4'>{datas.category}</p>
                                 <h5 className='text-[17px] font-normal mt-3'>{datas.product__title}</h5>
-                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo' onClick={() => {addCart(datas) }} /></div>
+                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo'  /></div>
                                 <div className='flex items-center'>
                                     <CiStar className='cursor-pointer' />
                                     <CiStar className='cursor-pointer' />
