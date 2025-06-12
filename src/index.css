@@ -7,6 +7,9 @@
   font-style: normal;
   box-sizing: border-box;
 }
+body{
+  overflow-x: hidden;
+}
 .padding {
   padding: 10px 16%;
 }

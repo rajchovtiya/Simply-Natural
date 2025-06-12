@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { CartAdd, fetchData } from '../Store';
+import React, { useState } from 'react';
 import { CiStar } from "react-icons/ci";
 import { IoBag } from 'react-icons/io5';
+import { NavLink } from 'react-router-dom';
+import useCartActions from '../logic/Cartlogic';
 
 const PlantsHomeCart = () => {
-    const [cartData, setCartData] = useState([])
     const [Chak, SetChak] = useState(null)
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchData()).then(action => {
-            setCartData(action.payload)
-        });
-    }, [dispatch])
-    
+    const { addCart, OneCart, cartData } = useCartActions();
+
 
     return (
         <div className='mt-44 padding'>
@@ -24,11 +18,17 @@ const PlantsHomeCart = () => {
                     return item.product.map((datas, index) => {
                         {
                             return datas.HomeCart === "true" ? <div className='relative mt-5 cursor-pointer' key={index}>
-                                <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[280px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} />
+                                <NavLink to='/CartDescription'>
+                                    <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[280px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} onClick={() => OneCart(datas)} />
+                                </NavLink>
                                 {datas.Sale == "true" ? <div className='absolute top-2 left-2 bg-[#ffffff] shadow-lg p-2 px-4 rounded-3xl'>Sale!</div> : ""}
                                 <p className='opacity-60 text-[13px] mt-4'>{datas.category}</p>
                                 <h5 className='text-[17px] font-normal mt-3'>{datas.product__title}</h5>
-                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo'  /></div>
+                                <div onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} className={`h-[25px] w-[25px] rounded-[50%] bg-white absolute top-2 right-2 flex items-center justify-center ${Chak === datas.id ? "opacity-100" : "opacity-0"}`}><IoBag className='text-[18px] opacity-70 Cartclorlo' onClick={(e) => {
+                                    e.stopPropagation(); 
+                                    e.preventDefault();  
+                                    addCart(datas)
+                                }} /></div>
                                 <div className='flex items-center'>
                                     <CiStar className='cursor-pointer' />
                                     <CiStar className='cursor-pointer' />
