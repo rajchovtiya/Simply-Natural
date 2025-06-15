@@ -17,7 +17,9 @@ function App() {
   return (
     <>
       <NavBaer Colorchange={Colorchange} CartSlow={CartSlow} setCartSlow={setCartSlow} />
-      <NavCart CartSlow={CartSlow} setCartSlow={setCartSlow} />
+      {CartSlow === true && (
+        <NavCart CartSlow={CartSlow} setCartSlow={setCartSlow} />
+      )}
 
       <div className={`relative ${CartSlow ? 'overflow-hidden h-screen' : 'overflow-auto'}`}>
         <div className={`bg-[#f9f9f9]`}>
@@ -27,7 +29,7 @@ function App() {
             <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
             <Route path="/Login" element={<Login setColorchange={setColorchange} />} />
             <Route path="/CartDescription" element={<CartDescription setColorchange={setColorchange} />} />
-            <Route path="*" element={<NotFound  />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

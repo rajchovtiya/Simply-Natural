@@ -18,7 +18,7 @@ const PlantsHomeCart = () => {
                     return item.product.map((datas, index) => {
                         {
                             return datas.HomeCart === "true" ? <div className='relative mt-5 cursor-pointer' key={index}>
-                                <NavLink to='/CartDescription'>
+                                <NavLink to='/CartDescription' id='NavLink' >
                                     <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[280px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} onClick={() => OneCart(datas)} />
                                 </NavLink>
                                 {datas.Sale == "true" ? <div className='absolute top-2 left-2 bg-[#ffffff] shadow-lg p-2 px-4 rounded-3xl'>Sale!</div> : ""}

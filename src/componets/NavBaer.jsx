@@ -60,10 +60,10 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
 
                     {/* Cart & User */}
                     <div className='flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mt-4 md:mt-0'>
-                        <div className='flex items-center gap-2'>
+                        <div className='flex items-center gap-2 cu' onClick={() => setCartSlow(true)}>
                             <p className='text-[#fc5f5f] font-semibold text-sm md:text-base'>${totalAmount}.00</p>
                             <div className='relative'>
-                                <FaBagShopping className='text-[#fc5f5f] text-[18px] md:text-[20px] cursor-pointer' onClick={() => setCartSlow(true)} />
+                                <FaBagShopping className='text-[#fc5f5f] text-[18px] md:text-[20px] cursor-pointer'  />
                                 <p
                                     className='absolute top-[-6px] right-[-10px] w-[15px] h-[15px] rounded-full bg-[#fc5f5f] text-black flex items-center justify-center text-[10px]'>
                                     {cart.reduce((total, item) => total + item.quantity, 0)}
