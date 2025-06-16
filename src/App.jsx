@@ -9,6 +9,7 @@ import Contact from "./page/Contact";
 import Login from "./page/Login";
 import NavCart from "./componets/NavCart";
 import CartDescription from "./componets/CartDescription";
+import Cart from "./componets/Cart";
 
 function App() {
   const [Colorchange, setColorchange] = useState("bg-[#e9e9e7]");
@@ -27,7 +28,8 @@ function App() {
             <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
             <Route path="/Login" element={<Login setColorchange={setColorchange} />} />
             <Route path="/CartDescription" element={<CartDescription setColorchange={setColorchange} />} />
-            <Route path="*" element={<NotFound  />} />
+            <Route path="/Cart" element={<Cart setColorchange={setColorchange} />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

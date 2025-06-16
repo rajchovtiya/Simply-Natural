@@ -1,11 +1,13 @@
 // src/hooks/useCartActions.js
 import { useDispatch } from "react-redux";
 import { CartAdd, CartDescription, fetchData } from "./Store";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useCartActions = () => {
     const dispatch = useDispatch();
     const [cartData, setCartData] = useState([])
+    const [backgroundPos, setBackgroundPos] = useState('center');
+    const containerRef = useRef(null);
 
     const addCart = (item) => {
         dispatch(
@@ -34,7 +36,7 @@ const useCartActions = () => {
                 mounts: items.Saleamount,
                 category: items.category,
                 Sale: items.Sale
-                
+
             })
         );
     };
@@ -44,7 +46,14 @@ const useCartActions = () => {
         });
     }, [dispatch])
 
-    return { addCart, OneCart, cartData };
+    const handleMouseMove = (e) => {
+        const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+        const x = ((e.pageX - left - window.scrollX) / width) * 100;
+        const y = ((e.pageY - top - window.scrollY) / height) * 100;
+        setBackgroundPos(`${x}% ${y}%`);
+    };
+
+    return { addCart, OneCart, handleMouseMove, cartData, backgroundPos, containerRef };
 };
 
 export default useCartActions;

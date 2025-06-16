@@ -1,16 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import useCartActions from '../logic/Cartlogic';
 
 const ZoomImage = ({ src }) => {
-    const [backgroundPos, setBackgroundPos] = useState('center');
     const [isZoomed, setIsZoomed] = useState(false);
-    const containerRef = useRef(null);
+    const { backgroundPos, handleMouseMove, containerRef } = useCartActions()
 
-    const handleMouseMove = (e) => {
-        const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-        const x = ((e.pageX - left - window.scrollX) / width) * 100;
-        const y = ((e.pageY - top - window.scrollY) / height) * 100;
-        setBackgroundPos(`${x}% ${y}%`);
-    };
 
     return (
         <div
