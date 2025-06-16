@@ -20,7 +20,8 @@
         "product__title": "Boncellensis Secullant",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 34.0,
-        "Sale": "false"
+        "Sale": "false",
+        "FeaturedPlants": "true"
       },
       {
         "id": 3,
@@ -30,7 +31,7 @@
         "product__title": "Green Soil Lotus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 34.0,
-        "Saleamount":"28",
+        "Saleamount": "28",
         "Sale": "true"
       },
       {
@@ -41,7 +42,7 @@
         "product__title": "Money Plant",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
         "amount": 20.0,
-        "Saleamount":"54",
+        "Saleamount": "54",
         "Sale": "true"
       },
       {
@@ -52,7 +53,7 @@
         "product__title": "Piorro Quisquam",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 32.0,
-        "Saleamount":"23",
+        "Saleamount": "23",
         "Sale": "true"
       },
       {
@@ -63,7 +64,7 @@
         "product__title": "Rattle Snake Tail",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 45.0,
-        "Saleamount":"12",
+        "Saleamount": "12",
         "Sale": "true"
       }
     ]
@@ -89,17 +90,21 @@
         "product__title": "Cleistocactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 25.0,
-        "Sale": "false"
+        "Saleamount": "30",
+        "Sale": "true",
+        "FeaturedPlants": "true"
       },
       {
         "id": 9,
         "HomeCart": "false",
         "img": "/img/Cactus3.png",
         "category": "Cactus",
-        "product__title": "Green Soil Lotus",
+        "product__title": "Star Cactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 45.0,
-        "Sale": "false"
+        "Sale": "true",
+        "Saleamount": "50",
+        "FeaturedPlants": "true"
       },
       {
         "id": 10,
@@ -129,7 +134,7 @@
         "product__title": "Old Lady Cactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
         "amount": 30.0,
-        "Saleamount":"34",
+        "Saleamount": "34",
         "Sale": "true"
       }
     ]

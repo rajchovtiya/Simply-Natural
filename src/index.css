@@ -7,7 +7,7 @@
   font-style: normal;
   box-sizing: border-box;
 }
-body{
+body {
   overflow-x: hidden;
 }
 .padding {
@@ -85,11 +85,17 @@ a {
 }
 .Cartclorlo {
   color: rgb(101 104 112);
-  transition: all 0.50s;
+  transition: all 0.5s;
 }
-.Cartclorlo:hover{
+.Cartclorlo:hover {
   color: black;
   opacity: 1;
+}
+.Storeheader {
+  background-image: url("/img/storebg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* better than 100% */
 }
 @media (max-width: 1500px) {
   .padding {
@@ -108,4 +114,15 @@ a {
     box-shadow: none;
     background-color: transparent;
   }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
 }

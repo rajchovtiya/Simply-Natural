@@ -5,17 +5,20 @@ import { FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { selectTotalPrice } from '../logic/Store';
+import useCartActions from '../logic/Cartlogic';
+import { useDispatch } from 'react-redux';
+import { setStoreHeading } from '../logic/uiSlice';
 
 const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
     const [Valuechange, setValuechange] = useState(null);
-    const [menuOpen, setMenuOpen] = useState(false);    
+    const [menuOpen, setMenuOpen] = useState(false);
     const { cart } = useSelector(state => state.shop);
     const totalAmount = useSelector(selectTotalPrice);
-
+    const { StoreHeding, setStoreHeding } = useCartActions();
+    const dispatch = useDispatch()
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
-
     return (
         <>
             <nav className={`padding flex items-center justify-between absolute w-full z-10 ${Colorchange}`} onMouseLeave={() => setValuechange(null)}>
@@ -37,11 +40,16 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
                         <NavLink to='/' className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>Home</NavLink>
 
                         <li className='relative cursor-pointer List' onMouseEnter={() => setValuechange(true)} onMouseLeave={() => setValuechange(null)}>
-                            <div className='flex items-center gap-1'>Store <MdOutlineKeyboardArrowDown /></div>
+                            <NavLink to='/store' className='flex items-center gap-1'>Store <MdOutlineKeyboardArrowDown /></NavLink>
                             {Valuechange !== null && (
-                                <ul className='Store_Box absolute bg-white p-3 border-t-2 border-red-600 w-[200px] top-[107%] md:right-[-268%]'>
-                                    <li className='hover:text-red-600 text-[15px] text-black'>Plants</li>
-                                    <li className='hover:text-red-600 text-[15px] text-black mt-3'>Cactus</li>
+                                <ul className='Store_Box absolute bg-white p-3 border-t-2 border-red-600 w-[200px] top-[107%] md:right-[-268%] '>
+                                    <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
+                                        <li className='hover:text-red-600 text-[15px] text-black 'onClick={() => dispatch(setStoreHeading('Plants'))} > Plants</li>
+                                    </NavLink>
+                                    <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
+                                        <li className='hover:text-red-600 text-[15px] text-black 'onClick={() => dispatch(setStoreHeading('Cactus'))}>Cactus</li>
+                                    </NavLink>
+
                                 </ul>
                             )}
                         </li>
@@ -60,10 +68,10 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
 
                     {/* Cart & User */}
                     <div className='flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mt-4 md:mt-0'>
-                        <div className='flex items-center gap-2'>
+                        <div className='flex items-center gap-2 cu' onClick={() => setCartSlow(true)}>
                             <p className='text-[#fc5f5f] font-semibold text-sm md:text-base'>${totalAmount}.00</p>
                             <div className='relative'>
-                                <FaBagShopping className='text-[#fc5f5f] text-[18px] md:text-[20px] cursor-pointer' onClick={() => setCartSlow(true)} />
+                                <FaBagShopping className='text-[#fc5f5f] text-[18px] md:text-[20px] cursor-pointer' />
                                 <p
                                     className='absolute top-[-6px] right-[-10px] w-[15px] h-[15px] rounded-full bg-[#fc5f5f] text-black flex items-center justify-center text-[10px]'>
                                     {cart.reduce((total, item) => total + item.quantity, 0)}

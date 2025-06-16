@@ -1,6 +1,6 @@
 // src/hooks/useCartActions.js
 import { useDispatch } from "react-redux";
-import { CartAdd, CartDescription, fetchData } from "./Store";
+import { CartAdd, CartDescription, fetchData, removeCartItem } from "./Store";
 import { useEffect, useRef, useState } from "react";
 
 const useCartActions = () => {
@@ -8,12 +8,13 @@ const useCartActions = () => {
     const [cartData, setCartData] = useState([])
     const [backgroundPos, setBackgroundPos] = useState('center');
     const containerRef = useRef(null);
+    const [loadingItemId, setLoadingItemId] = useState(null);
 
     const addCart = (item) => {
         dispatch(
             CartAdd({
                 id: item.id,
-                title: item.title,
+                title: item.product__title,
                 img: item.img,
                 price: item.amount,
                 productdetails: item.productdetails,
@@ -22,9 +23,9 @@ const useCartActions = () => {
                 Sale: item.Sale
             })
         );
+
         alert("Added to Cart");
     };
-
     const OneCart = (items) => {
         dispatch(
             CartDescription({
@@ -53,7 +54,15 @@ const useCartActions = () => {
         setBackgroundPos(`${x}% ${y}%`);
     };
 
-    return { addCart, OneCart, handleMouseMove, cartData, backgroundPos, containerRef };
+    const handleDelayedRemove = (id) => {
+        setLoadingItemId(id);
+        setTimeout(() => {
+            dispatch(removeCartItem({ id }));
+            setLoadingItemId(null);
+        }, 1000);
+    };
+
+    return { addCart, OneCart, handleMouseMove, cartData, backgroundPos, containerRef, handleDelayedRemove, loadingItemId };
 };
 
 export default useCartActions;

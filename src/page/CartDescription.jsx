@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 import useCartActions from '../logic/Cartlogic';
-import ZoomImage from './ZoomImage';
-import Relatedproducts from './Relatedproducts';
+import ZoomImage from '../componets/ZoomImage';
+import Relatedproducts from '../componets/Relatedproducts';
 
 const CartDescription = ({ setColorchange }) => {
     setColorchange('bg-white')
@@ -21,11 +21,13 @@ const CartDescription = ({ setColorchange }) => {
         e.preventDefault();
     };
     return (
-        <div className='padding' id='top'>
-            <div className='min-h-[100vh] w-[100%] bg-white mt-28 py-12 px-20'>
-                <div className='flex  justify-between gap-4'>
-                    <ZoomImage src={onlyCart.img} />
-                    <div className='px-10'>
+        <div className='padding' id='top NavLink'>
+            <div className='min-h-[100vh] w-[100%] bg-white mt-28 py-3 px-3 2x:py-12 2xl:px-20'>
+                <div className='flex  justify-between gap-4 flex-wrap xl:flex-nowrap'>
+                    <div className='w-[100%] xl:w-[80%] h-[400px]  overflow-hidden flex items-center justify-center bg-no-repeat xl:'>
+                        <ZoomImage src={onlyCart.img} />
+                    </div>
+                    <div className='px-3 xl:px-10'>
                         <p className='text-[14px] opacity-50'>{onlyCart.category}</p>
                         <h3 className='text-4xl font-normal mt-3'>{onlyCart.title}</h3>
                         <div className='flex items-end gap-3'>
@@ -37,16 +39,16 @@ const CartDescription = ({ setColorchange }) => {
                             </div>
                         </div>
                         <p className='mt-3 text-[15px] opacity-70'>{onlyCart.productdetails}</p>
-                        <div className='gap-2 flex items-center mt-5'>
+                        <div className='gap-2 flex items-center mt-5 flex-wrap'>
                             <input
                                 type="number"
                                 min={1}
                                 max={10}
                                 value={quantity}
                                 onChange={handleChange}
-                                className="border px-3 rounded w-16 h-10"
+                                className="border px-3 rounded w-24 h-10 xl:w-16"
                             />
-                            <button className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer text-[15px] SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-1 px-10 w-[38%]' onClick={() => {
+                            <button className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer text-[15px] SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-1 px-10 w-[245px]' onClick={() => {
                                 const itemWithQty = { ...onlyCart, quantity };
                                 addCart(itemWithQty);
                             }}> ADD TO CART</button>
@@ -67,7 +69,7 @@ const CartDescription = ({ setColorchange }) => {
                         : <div className='mt-6'>
                             <p className='opacity-60 text-[15px]'>There are no reviews yet.</p>
                             <div>
-                                <form onSubmit={handleSubmit} className="p-6 w-full bg-white shadow rounded">
+                                <form onSubmit={handleSubmit} className="p-2 xl:p-6 w-full bg-white shadow rounded">
                                     <h2 className="text-xl font-semibold mb-2 opacity-40">
                                         Be the first to review “Boncellensis Secullant”
                                     </h2>

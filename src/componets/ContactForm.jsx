@@ -6,11 +6,11 @@ import { MdEmail } from "react-icons/md";
 const ContactForm = () => {
     return (
         <div className='padding'>
-            <div className='flex justify-between gap-3 mt-12'>
-                <div className='w-[58%]'>
-                    <div className='w-[80%]'>
+            <div className='flex justify-between gap-10 mt-12 flex-wrap'>
+                <div className='w-[100%]  2xl:w-[58%]'>
+                    <div className='w-[100%] 2xl:w-[80%]'>
                         <h1 className='text-3xl font-medium'>Contact Details</h1>
-                        <div className='mt-7 flex items-center justify-between flex-wrap gap-4'>
+                        <div className='mt-7 flex items-center 2xl:justify-between flex-wrap gap-4 justify-center   md:justify-between'>
                             <div className='flex gap-3  w-[260px] '>
                                 <FaMapMarkerAlt className='text-[#fc5f5f] text-[24px] mt-4' />
                                 <div className='ml-5'>
@@ -87,7 +87,7 @@ const ContactForm = () => {
                         </form>
                     </div>
                 </div>
-                <div className='w-[30%]'>
+                <div className='w-[100%]  2xl:w-[38%]'>
                     <h1 className='text-3xl font-medium'>Find Us</h1>
                     <div className="w-full h-[650px] rounded-2xl overflow-hidden shadow-lg m-4 mx-0">
                         <iframe

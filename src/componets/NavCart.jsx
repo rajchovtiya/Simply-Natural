@@ -3,12 +3,16 @@ import { IoMdClose } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from 'react-redux';
 import { CartAdd, removeCartItem, selectTotalItems, selectTotalPrice } from '../logic/Store';
+import { NavLink } from 'react-router-dom';
+import useCartActions from '../logic/Cartlogic';
 
 const NavCart = ({ CartSlow, setCartSlow }) => {
     const dispatch = useDispatch();
     const { cart } = useSelector(CartAdd => CartAdd.shop);
     const totalAmount = useSelector(selectTotalPrice);
     const totalQuantity = useSelector(selectTotalItems);
+    const { handleDelayedRemove, loadingItemId } = useCartActions();
+
     return (
         <div>
             <div className={`absolute w-[100%] 2xl:w-[32%] min-h-[100vh] bg-white top-0  z-50 py-4 duration-300  ${CartSlow === true ? "right-0" : "right-[-100%]"}`}>
@@ -24,12 +28,19 @@ const NavCart = ({ CartSlow, setCartSlow }) => {
                                     <img src={item.img} alt="" className='max-w-[70px]' />
                                     <div>
                                         <h2 className='text-[15px] font-medium'>{item.title}</h2>
-                                        <p className='flex items-center opacity-70 gap-1'><span className='font-normal'>{item.quantity}</span><IoMdClose className='text-[10px] font-normal' /><span className='font-normal'>$</span><span className='font-normal'>{item.price}.00</span></p>
+                                        <p className='flex items-center opacity-70 gap-1'><span className='font-normal'>{item.quantity}</span>
+                                            <IoMdClose className='text-[10px] font-normal' /><span className='font-normal'>$</span><span className='font-normal'>{item.price}.00</span></p>
                                     </div>
                                 </div>
                                 <div>
-                                    <IoCloseCircleOutline className='cursor-pointer text-[25px] opacity-40 hover:opacity-90 duration-500' onClick={() => dispatch(removeCartItem({ id: item.id }))}
-                                    />
+                                    {loadingItemId === item.id ? (
+                                        <div className="w-6 h-6 border-2 border-red-400 border-t-transparent rounded-full animate-spin"></div>
+                                    ) : (
+                                        <IoCloseCircleOutline
+                                            className="cursor-pointer text-[25px] opacity-40 hover:opacity-90 duration-300"
+                                            onClick={() => handleDelayedRemove(item.id)}
+                                        />
+                                    )}
                                 </div>
                             </li>
 
@@ -45,10 +56,14 @@ const NavCart = ({ CartSlow, setCartSlow }) => {
                         <p className='font-normal'>Subtotal:</p>
                         <h3 className='opacity-80'><span>$</span><span>{totalAmount}.00</span></h3>
                     </div>
-                    <button className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
-                        VIEW CART</button>
-                    <button className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
-                        CHECKOUT</button>
+                    <NavLink to='/cart' className='w-[100%]'>
+                        <button onClick={() => setCartSlow(false)} className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
+                            VIEW CART</button>
+                    </NavLink>
+                    <NavLink to='/checkout' className='w-[100%]'>
+                        <button onClick={() => setCartSlow(false)} className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
+                            CHECKOUT</button>
+                    </NavLink>
                 </div>
                 }
             </div>

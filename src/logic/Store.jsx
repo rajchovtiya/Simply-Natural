@@ -1,5 +1,5 @@
 import { configureStore, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+import uiReducer from './uiSlice';
 export const fetchData = createAsyncThunk(
     'Cart/fetchData',
     async () => {
@@ -17,7 +17,7 @@ const initialState = {
     cart: [],
     productView: null,
     loading: false,
-    products: []
+    products: [],
 };
 
 const StoreRedux = createSlice({
@@ -28,7 +28,6 @@ const StoreRedux = createSlice({
             const item = action.payload;
             const existing = state.cart.find(x => x.id === item.id);
             if (existing) {
-                // Replace quantity with new value, NOT add to it
                 existing.quantity = item.quantity || 1;
             } else {
                 state.cart.push({ ...item, quantity: item.quantity || 1 });
@@ -74,8 +73,11 @@ export const { CartAdd, removeCartItem, updateCartItemQuantity, CartDescription 
 
 export const store = configureStore({
     reducer: {
-        shop: StoreRedux.reducer
-    }
+        shop: StoreRedux.reducer,
+        ui: uiReducer,
+
+    },
+
 });
 
 export const selectTotalPrice = (state) =>

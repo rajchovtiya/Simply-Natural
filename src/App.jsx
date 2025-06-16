@@ -8,8 +8,11 @@ import Footer from "./componets/Footer";
 import Contact from "./page/Contact";
 import Login from "./page/Login";
 import NavCart from "./componets/NavCart";
-import CartDescription from "./componets/CartDescription";
-import Cart from "./componets/Cart";
+import CartDescription from "./page/CartDescription";
+import Cart from "./page/Cart";
+import Checkout from "./page/Checkout";
+import Store from "./page/Store";
+import Plants from "./page/Plants";
 
 function App() {
   const [Colorchange, setColorchange] = useState("bg-[#e9e9e7]");
@@ -18,17 +21,22 @@ function App() {
   return (
     <>
       <NavBaer Colorchange={Colorchange} CartSlow={CartSlow} setCartSlow={setCartSlow} />
-      <NavCart CartSlow={CartSlow} setCartSlow={setCartSlow} />
+      {CartSlow === true && (
+        <NavCart CartSlow={CartSlow} setCartSlow={setCartSlow} />
+      )}
 
       <div className={`relative ${CartSlow ? 'overflow-hidden h-screen' : 'overflow-auto'}`}>
         <div className={`bg-[#f9f9f9]`}>
           <Routes>
             <Route path="/" element={<Home setColorchange={setColorchange} CartSlow={CartSlow} />} />
             <Route path="/about" element={<About setColorchange={setColorchange} />} />
+            <Route path="/store" element={<Store setColorchange={setColorchange} />} />
             <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
             <Route path="/Login" element={<Login setColorchange={setColorchange} />} />
             <Route path="/CartDescription" element={<CartDescription setColorchange={setColorchange} />} />
-            <Route path="/Cart" element={<Cart setColorchange={setColorchange} />} />
+            <Route path="/cart" element={<Cart setColorchange={setColorchange} setCartSlow={setCartSlow} />} />
+            <Route path="/checkout" element={<Checkout setColorchange={setColorchange} />} />
+            <Route path="/plants" element={<Plants setColorchange={setColorchange} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
