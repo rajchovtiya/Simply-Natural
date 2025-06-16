@@ -15,7 +15,7 @@ const Filter = ({ min = 0, max = 45 }) => {
     const storeHeading = useSelector((s) => s.ui.storeHeading);
     const { addCart, OneCart, cartData } = useCartActions();
     const [hoverId, setHoverId] = React.useState(null);
-    console.log(priceRange)
+
     /* --- Hottest‑Deals helper --- */
     const hotDeals =
         cartData
