@@ -26,20 +26,18 @@ function App() {
       )}
 
       <div className={`relative ${CartSlow ? 'overflow-hidden h-screen' : 'overflow-auto'}`}>
-        <div className={`bg-[#f9f9f9]`}>
-          <Routes>
-            <Route path="/" element={<Home setColorchange={setColorchange} CartSlow={CartSlow} />} />
-            <Route path="/about" element={<About setColorchange={setColorchange} />} />
-            <Route path="/store" element={<Store setColorchange={setColorchange} />} />
-            <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
-            <Route path="/Login" element={<Login setColorchange={setColorchange} />} />
-            <Route path="/CartDescription" element={<CartDescription setColorchange={setColorchange} />} />
-            <Route path="/cart" element={<Cart setColorchange={setColorchange} setCartSlow={setCartSlow} />} />
-            <Route path="/checkout" element={<Checkout setColorchange={setColorchange} />} />
-            <Route path="/plants" element={<Plants setColorchange={setColorchange} />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home setColorchange={setColorchange} CartSlow={CartSlow} />} />
+          <Route path="/about" element={<About setColorchange={setColorchange} />} />
+          <Route path="/store" element={<Store setColorchange={setColorchange} />} />
+          <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
+          <Route path="/Login" element={<Login setColorchange={setColorchange} />} />
+          <Route path="/CartDescription" element={<CartDescription setColorchange={setColorchange} />} />
+          <Route path="/cart" element={<Cart setColorchange={setColorchange} setCartSlow={setCartSlow} />} />
+          <Route path="/checkout" element={<Checkout setColorchange={setColorchange} />} />
+          <Route path="/plants" element={<Plants setColorchange={setColorchange} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
         <Footer />
       </div>
     </>

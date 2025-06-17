@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; /* still optional for old devices */
+}
+
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 300;

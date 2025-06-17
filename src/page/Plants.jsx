@@ -3,8 +3,7 @@ import FilterCart from '../components/FilterCart';
 import Category from '../components/Category';
 
 const Plants = ({ setColorchange }) => {
-    const [range, setRange] = useState([0, 45]);
-
+    const [range, setRange] = useState([20, 45]);
     useEffect(() => {
         setColorchange('bg-white');
     }, [setColorchange]);

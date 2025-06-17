@@ -19,7 +19,7 @@ const Category = () => {
     const visibleProducts = filteredProducts
         .filter(p => {
             if (!Array.isArray(priceRange) || priceRange.length < 2) return true; // no filtering
-            return p.amount >= priceRange[0] && p.amount <= priceRange[1];
+            return p.amount >= priceRange[0] && p.amount <= priceRange[1]; // ✅ FIXED RANGE
         })
         .sort((a, b) => {
             if (sortOption === 'lowToHigh') return a.amount - b.amount;

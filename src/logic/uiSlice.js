@@ -5,7 +5,7 @@ const uiSlice = createSlice({
     name: 'ui',
     initialState: {
         storeHeading: 'Plants',
-        priceRange: [0, 45],
+        priceRange: [20, 45],
     },
     reducers: {
         setStoreHeading(state, action) {
