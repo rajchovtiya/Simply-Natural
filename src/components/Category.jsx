@@ -15,8 +15,12 @@ const Category = () => {
 
     const filteredProducts =
         cartData.find(i => i.Heding === storeHeading)?.product || [];
+
     const visibleProducts = filteredProducts
-        .filter(p => p.amount >= priceRange[0] && p.amount <= priceRange[1])// ➏ price filter
+        .filter(p => {
+            if (!Array.isArray(priceRange) || priceRange.length < 2) return true; // no filtering
+            return p.amount >= priceRange[0] && p.amount <= priceRange[1];
+        })
         .sort((a, b) => {
             if (sortOption === 'lowToHigh') return a.amount - b.amount;
             if (sortOption === 'highToLow') return b.amount - a.amount;
@@ -24,9 +28,10 @@ const Category = () => {
         });
 
 
+
     return (
-        <div className='bg-white w-[65%] h-max'>
-            <div className='px-20 py-20'>
+        <div className='bg-white w-[100%] h-max 2xl:w-[66%]'>
+            <div className='px-3 py-10 2xl:px-20 2xl:py-20 '>
                 <p className='opacity-70 text-[15px]'>Home / {storeHeading}</p>
                 <h1 className='text-5xl mt-12 font-normal'>{storeHeading}</h1>
                 <div>

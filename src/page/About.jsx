@@ -3,7 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
-import Interestedplants from '../componets/Interestedplants';
+import Interestedplants from '../components/Interestedplants';
 
 const OurTeam = [
     {

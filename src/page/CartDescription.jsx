@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 import useCartActions from '../logic/Cartlogic';
-import ZoomImage from '../componets/ZoomImage';
-import Relatedproducts from '../componets/Relatedproducts';
+import ZoomImage from '../components/ZoomImage';
+import Relatedproducts from '../components/Relatedproducts';
 
 const CartDescription = ({ setColorchange }) => {
     setColorchange('bg-white')

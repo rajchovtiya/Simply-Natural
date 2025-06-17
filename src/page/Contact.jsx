@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactForm from '../componets/ContactForm';
+import ContactForm from '../components/ContactForm';
 
 const Contact = ({ setColorchange }) => {
     setColorchange(`boxshadow`)

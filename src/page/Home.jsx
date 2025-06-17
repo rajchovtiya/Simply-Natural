@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import Header from '../componets/Header';
-import Collection from '../componets/Collection';
-import PlantsHomeCart from '../componets/PlantsHomeCart';
-import Testimonials from '../componets/Testimonials';
-import Interestedplants from '../componets/Interestedplants';
+import Header from '../components/Header';
+import Collection from '../components/Collection';
+import PlantsHomeCart from '../components/PlantsHomeCart';
+import Testimonials from '../components/Testimonials';
+import Interestedplants from '../components/Interestedplants';
 import { useDispatch } from 'react-redux';
 import { setStoreHeading } from '../logic/uiSlice';
 

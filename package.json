@@ -12,14 +12,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@tanstack/react-query": "^5.80.6",
-    "rc-slider": "^11.1.8",
+    "rc-slider": "^10.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.57.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.2",
-    "react-slider": "^2.0.6",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0"
   },

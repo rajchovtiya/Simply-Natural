@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import NavBaer from "./componets/NavBaer";
+import NavBaer from "./components/NavBaer";
 import About from "./page/About";
 import Home from "./page/Home";
-import NotFound from "./componets/NotFound";
-import Footer from "./componets/Footer";
+import NotFound from "./components/NotFound";
+import Footer from "./components/Footer";
 import Contact from "./page/Contact";
 import Login from "./page/Login";
-import NavCart from "./componets/NavCart";
+import NavCart from "./components/NavCart";
 import CartDescription from "./page/CartDescription";
 import Cart from "./page/Cart";
 import Checkout from "./page/Checkout";
