@@ -37,17 +37,26 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
 
                 <div className={`lg:flex items-center justify-between gap-2 ${menuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-white p-4 shadow-lg' : 'hidden lg:flex'}`}>
                     <ul className='flex lg:flex-row flex-col lg:items-center gap-4 lg:gap-2 lg:mr-7'>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>Home</NavLink>
+                        <NavLink to='/' className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
+                            <li onClick={() => setMenuOpen(false)}>
+                                Home
+                            </li>
+                        </NavLink>
 
                         <li className='relative cursor-pointer List' onMouseEnter={() => setValuechange(true)} onMouseLeave={() => setValuechange(null)}>
-                            <NavLink to='/store' className='flex items-center gap-1'>Store <MdOutlineKeyboardArrowDown /></NavLink>
+                            <NavLink to='/store' className='flex items-center gap-1'>
+                                <li onClick={() => setMenuOpen(false)}>
+                                    Store
+                                </li>
+                                <MdOutlineKeyboardArrowDown />
+                            </NavLink>
                             {Valuechange !== null && (
                                 <ul className='Store_Box absolute bg-white p-3 border-t-2 border-red-600 w-[200px] top-[107%] md:right-[-268%] '>
                                     <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
-                                        <li className='hover:text-red-600 text-[15px] text-black 'onClick={() => dispatch(setStoreHeading('Plants'))} > Plants</li>
+                                        <li className='hover:text-red-600 text-[15px] text-black ' onClick={() => { dispatch(setStoreHeading('Plants')), setMenuOpen(false) }} > Plants</li>
                                     </NavLink>
                                     <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
-                                        <li className='hover:text-red-600 text-[15px] text-black 'onClick={() => dispatch(setStoreHeading('Cactus'))}>Cactus</li>
+                                        <li className='hover:text-red-600 text-[15px] text-black ' onClick={() => { dispatch(setStoreHeading('Cactus')), setMenuOpen(false) }}>Cactus</li>
                                     </NavLink>
 
                                 </ul>
@@ -55,14 +64,20 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
                         </li>
 
                         <NavLink to="/about" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            About Us
+                            <li onClick={() => setMenuOpen(false)}>
+                                About Us
+                            </li>
                         </NavLink>
 
                         <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            Contact Us
+                            <li onClick={() => setMenuOpen(false)}>
+                                Contact Us
+                            </li>
                         </NavLink>
                         <NavLink to="/login" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            My Account
+                            <li onClick={() => setMenuOpen(false)}>
+                                My Account
+                            </li>
                         </NavLink>
                     </ul>
 

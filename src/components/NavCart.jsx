@@ -49,8 +49,10 @@ const NavCart = ({ CartSlow, setCartSlow }) => {
                 </ul>
 
                 {cart.length === 0 ? <div className='px-5 flex items-center justify-center duration-300 absolute bottom-3 flex-col w-[100%]'>
-                    <button className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
-                        CONTINUE SHOPPING</button>
+                    <NavLink to='/plants' className='w-[100%]'>
+                        <button onClick={() => setCartSlow(false)} className='text-white  bg-[#fc5f5f]  mt-2 cursor-pointer SHOP rounded-3xl ease-in-out duration-300 hover:bg-[#75c32c] p-3 px-10 w-[100%]'>
+                            CONTINUE SHOPPING</button>
+                    </NavLink>
                 </div> : <div className='px-5 flex items-center justify-center duration-300 absolute bottom-3 flex-col w-[100%]'>
                     <div className='border flex items-center justify-between px-5 absolute bottom-32 w-[100%] py-4'>
                         <p className='font-normal'>Subtotal:</p>
