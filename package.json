@@ -1,14 +1,15 @@
 {
-  "name": "react",
+  "name": "simply-natural",
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "deploy": "vite build && gh-pages -d dist"
-},
+  "homepage": "https://rajchovtiya.github.io/Simply-Natural",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@tanstack/react-query": "^5.80.6",
