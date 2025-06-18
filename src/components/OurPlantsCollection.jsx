@@ -12,8 +12,8 @@ const OurPlantsCollection = () => {
         <div className='mt-4 padding pt-10 bg-[#f9f9f9] '>
             <h1 className='text-3xl font-medium mt-10'>Our Plants Collection</h1>
             <div className='flex items-center justify-between flex-wrap mt-9'>
-                {cartData.map((item, index) => {
-                    return item.product.map((datas, index) => {
+                {cartData?.map((item, index) => {
+                    return item.product?.map((datas, index) => {
                         {
                             return datas.FeaturedPlants !== "true" ? <div className='relative mt-5 cursor-pointer' key={index}>
                                 <NavLink to='/CartDescription' id='NavLink' >

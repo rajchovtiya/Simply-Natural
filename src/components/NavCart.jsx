@@ -22,7 +22,7 @@ const NavCart = ({ CartSlow, setCartSlow }) => {
                 </div>
                 <ul className='mt-4 px-5'>
                     {cart.length === 0 ? <p className='opacity-60 text-center h-[650px] flex items-center justify-center text-[14px]'>No products in the cart.</p> :
-                        cart.map((item, index) => {
+                        cart?.map((item, index) => {
                             return <li className='flex items-center justify-between mt-3' key={index}>
                                 <div className='flex items-center gap-3'>
                                     <img src={item.img} alt="" className='max-w-[70px]' />

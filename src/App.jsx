@@ -36,7 +36,7 @@ function App() {
           <Route path="/cart" element={<Cart setColorchange={setColorchange} setCartSlow={setCartSlow} />} />
           <Route path="/checkout" element={<Checkout setColorchange={setColorchange} />} />
           <Route path="/plants" element={<Plants setColorchange={setColorchange} />} />
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
         <Footer />
       </div>

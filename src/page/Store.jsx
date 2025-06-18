@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FeaturedPlants from '../components/FeaturedPlants';
 import OurPlantsCollection from '../components/OurPlantsCollection';
 import HelpSection from '../components/HelpSection';
 
 const Store = ({ setColorchange }) => {
-    setColorchange('bg-transition')
+    useEffect(() => {
+        setColorchange('bg-transition')
+    }, [])
     return (
         <div className=''>
             <div className='relative'>

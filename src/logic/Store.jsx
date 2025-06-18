@@ -1,96 +1,60 @@
 import { configureStore, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import uiReducer from './uiSlice';
-export const fetchData = createAsyncThunk(
-    'Cart/fetchData',
-    async () => {
-        const response = await fetch('/PlantsData.json');
-        if (!response.ok) throw new Error(`Could not load PlantsData.json (status ${response.status})`);
-        const data = await response.json();
-        return data.map(item => ({
-            Heding: item.Heding,
-            product: item.product
-        }));
+
+/* async thunk */
+export const fetchData = createAsyncThunk('shop/fetchData', async (_, { rejectWithValue }) => {
+    try {
+        const res = await fetch('/PlantsData.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        return Array.isArray(json) ? json.map(({ Heding, product }) => ({ Heding, product })) : [];
+    } catch (err) {
+        return rejectWithValue(err.message);
     }
-);
+});
 
 const initialState = {
     cart: [],
     productView: null,
     loading: false,
+    error: null,
     products: [],
 };
 
-const StoreRedux = createSlice({
-    name: "Cart",
+const shopSlice = createSlice({
+    name: 'shop',
     initialState,
     reducers: {
-        CartAdd(state, action) {
-            const item = action.payload;
-            const existing = state.cart.find(x => x.id === item.id);
-            if (existing) {
-                existing.quantity = item.quantity || 1;
-            } else {
-                state.cart.push({ ...item, quantity: item.quantity || 1 });
-            }
+        CartAdd(state, { payload }) {
+            const existing = state.cart.find(i => i.id === payload.id);
+            if (existing) existing.quantity += payload.quantity ?? 1;
+            else state.cart.push({ ...payload, quantity: payload.quantity ?? 1 });
         },
-
-
-
-        CartDescription(state, action) {
-            const item = action.payload;
-            state.productView = { ...item, quantity: 1 };
+        removeCartItem(state, { payload }) {
+            state.cart = state.cart.filter(i => i.id !== payload);
         },
-
-        removeCartItem(state, action) {
-            const idToRemove = action.payload.id;
-            state.cart = state.cart.filter(x => x.id !== idToRemove);
+        updateCartItemQuantity(state, { payload }) {
+            const item = state.cart.find(i => i.id === payload.id);
+            if (item && payload.quantity >= 1) item.quantity = payload.quantity;
         },
-
-        updateCartItemQuantity(state, action) {
-            const { id, quantity } = action.payload;
-            const item = state.cart.find(x => x.id === id);
-            if (item && quantity >= 1) {
-                item.quantity = quantity;
-            }
-        }
+        CartDescription(state, { payload }) {
+            state.productView = { ...payload, quantity: 1 };
+        },
     },
     extraReducers: builder => {
         builder
-            .addCase(fetchData.pending, state => {
-                state.loading = true;
-            })
-            .addCase(fetchData.fulfilled, (state, action) => {
-                state.loading = false;
-                state.products = action.payload;
-            })
-            .addCase(fetchData.rejected, state => {
-                state.loading = false;
-            });
-    }
+            .addCase(fetchData.pending, state => { state.loading = true; state.error = null; })
+            .addCase(fetchData.fulfilled, (state, { payload }) => { state.loading = false; state.products = payload; })
+            .addCase(fetchData.rejected, (state, { payload }) => { state.loading = false; state.error = payload; });
+    },
 });
 
-export const { CartAdd, removeCartItem, updateCartItemQuantity, CartDescription } = StoreRedux.actions;
+export const { CartAdd, removeCartItem, updateCartItemQuantity, CartDescription } = shopSlice.actions;
 
 export const store = configureStore({
-    reducer: {
-        shop: StoreRedux.reducer,
-        ui: uiReducer,
-
-    },
-
+    reducer: { shop: shopSlice.reducer, ui: uiReducer },
 });
 
-export const selectTotalPrice = (state) =>
-    state.shop.cart.reduce((total, item) => total + item.price * item.quantity, 0);
-
-export const selectTotalItems = (state) =>
-    state.shop.cart.reduce((total, item) => total + item.quantity, 0);
-
-// store.dispatch(CartAdd({ id: 1, title: "dksdjqhaksd" }))
-// store.dispatch(CartAdd({ id: 2, title: "dkseqwedqwjhaksd" }))
-// store.dispatch(CartAdd({ id: 3, title: "dksdjhwewqeaksd" }))
-//  store.dispatch(CartDescription({ id: 4, title: "dksdqwejhaksd" }))
-//  console.log(store.getState())
-// store.dispatch(fetchData()).then(action => {
-//     console.log(action.payload)
-// });
+/* selectors */
+export const selectTotalPrice = s => s.shop.cart.reduce((t, i) => t + i.price * i.quantity, 0);
+export const selectTotalItems = s => s.shop.cart.reduce((t, i) => t + i.quantity, 0);

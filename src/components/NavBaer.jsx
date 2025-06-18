@@ -1,103 +1,160 @@
 import React, { useState } from 'react';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { FaBagShopping } from "react-icons/fa6";
-import { FaUser, FaBars, FaTimes } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { FaBagShopping } from 'react-icons/fa6';
+import { FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectTotalPrice } from '../logic/Store';
 import useCartActions from '../logic/Cartlogic';
-import { useDispatch } from 'react-redux';
 import { setStoreHeading } from '../logic/uiSlice';
 
 const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
-    const [Valuechange, setValuechange] = useState(null);
+    const [showDropdown, setShowDropdown] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const { cart } = useSelector(state => state.shop);
+
+    const { cart } = useSelector((state) => state.shop);
     const totalAmount = useSelector(selectTotalPrice);
-    const { StoreHeding, setStoreHeding } = useCartActions();
-    const dispatch = useDispatch()
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+
+    const dispatch = useDispatch();
+
+    const toggleMenu = () => setMenuOpen((p) => !p);
+
     return (
-        <>
-            <nav className={`padding flex items-center justify-between absolute w-full z-10 ${Colorchange}`} onMouseLeave={() => setValuechange(null)}>
-                <NavLink to='/'>
-                    <div className='LOGO flex items-center gap-4'>
-                        <img src="./img/Logo1.svg" alt="Logo" className='max-w-[50px]' />
-                        <h1 className='font-medium flex-none text-[20px]'>Simply Natural</h1>
-                    </div>
-                </NavLink>
-
-                <div className='lg:hidden'>
-                    <button onClick={toggleMenu}>
-                        {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-                    </button>
+        <nav
+            className={`padding flex items-center justify-between absolute w-full z-10 ${Colorchange}`}
+        >
+            {/* Logo */}
+            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+                <div className="LOGO flex items-center gap-4">
+                    <img src="/img/Logo1.svg" alt="Logo" className="max-w-[50px]" />
+                    <h1 className="font-medium text-[20px]">Simply Natural</h1>
                 </div>
+            </NavLink>
 
-                <div className={`lg:flex items-center justify-between gap-2 ${menuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-white p-4 shadow-lg' : 'hidden lg:flex'}`}>
-                    <ul className='flex lg:flex-row flex-col lg:items-center gap-4 lg:gap-2 lg:mr-7'>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            <li onClick={() => setMenuOpen(false)}>
-                                Home
-                            </li>
+            {/* Mobile hamburger */}
+            <button className="lg:hidden" onClick={toggleMenu}>
+                {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+            </button>
+
+            {/* Links */}
+            <div
+                className={`${menuOpen
+                        ? 'flex flex-col absolute top-full left-0 w-full bg-white p-4 shadow-lg'
+                        : 'hidden lg:flex'
+                    } lg:flex items-center gap-6`}
+            >
+                <ul className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
+                    <li onClick={() => setMenuOpen(false)}>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? 'text-red-500' : 'List'
+                            }
+                        >
+                            Home
                         </NavLink>
+                    </li>
 
-                        <li className='relative cursor-pointer List' onMouseEnter={() => setValuechange(true)} onMouseLeave={() => setValuechange(null)}>
-                            <NavLink to='/store' className='flex items-center gap-1'>
-                                <li onClick={() => setMenuOpen(false)}>
-                                    Store
-                                </li>
-                                <MdOutlineKeyboardArrowDown />
+                    {/* Store + dropdown */}
+                    <li
+                        className="relative"
+                        onMouseEnter={() => setShowDropdown(true)}
+                        onMouseLeave={() => setShowDropdown(false)}
+                    >
+                        <div className="flex items-center gap-1 cursor-pointer">
+                            <NavLink
+                                to="/store"
+                                className={({ isActive }) =>
+                                    isActive ? 'text-red-500' : 'List'
+                                }
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Store
                             </NavLink>
-                            {Valuechange !== null && (
-                                <ul className='Store_Box absolute bg-white p-3 border-t-2 border-red-600 w-[200px] top-[107%] md:right-[-268%] '>
-                                    <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
-                                        <li className='hover:text-red-600 text-[15px] text-black ' onClick={() => { dispatch(setStoreHeading('Plants')), setMenuOpen(false) }} > Plants</li>
-                                    </NavLink>
-                                    <NavLink to="/plants" className={({ isActive }) => (isActive ? "text-red-500 ml-2" : "List")}>
-                                        <li className='hover:text-red-600 text-[15px] text-black ' onClick={() => { dispatch(setStoreHeading('Cactus')), setMenuOpen(false) }}>Cactus</li>
-                                    </NavLink>
-
-                                </ul>
-                            )}
-                        </li>
-
-                        <NavLink to="/about" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            <li onClick={() => setMenuOpen(false)}>
-                                About Us
-                            </li>
-                        </NavLink>
-
-                        <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            <li onClick={() => setMenuOpen(false)}>
-                                Contact Us
-                            </li>
-                        </NavLink>
-                        <NavLink to="/login" className={({ isActive }) => (isActive ? "text-red-500 ml-5" : "List")}>
-                            <li onClick={() => setMenuOpen(false)}>
-                                My Account
-                            </li>
-                        </NavLink>
-                    </ul>
-
-                    {/* Cart & User */}
-                    <div className='flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mt-4 md:mt-0'>
-                        <div className='flex items-center gap-2 cu' onClick={() => setCartSlow(true)}>
-                            <p className='text-[#fc5f5f] font-semibold text-sm md:text-base'>${totalAmount}.00</p>
-                            <div className='relative'>
-                                <FaBagShopping className='text-[#fc5f5f] text-[18px] md:text-[20px] cursor-pointer' />
-                                <p
-                                    className='absolute top-[-6px] right-[-10px] w-[15px] h-[15px] rounded-full bg-[#fc5f5f] text-black flex items-center justify-center text-[10px]'>
-                                    {cart.reduce((total, item) => total + item.quantity, 0)}
-                                </p>
-                            </div>
+                            <MdOutlineKeyboardArrowDown />
                         </div>
-                        <FaUser className='text-[18px] md:text-[20px]' />
-                    </div>
+
+                        {showDropdown && (
+                            <ul className="absolute top-full left-0 w-48 bg-white border-t-2 border-red-600 shadow-md p-2">
+                                <li onClick={() => setMenuOpen(false)}>
+                                    <NavLink
+                                        to="/plants"
+                                        className="block py-1 px-2 hover:text-red-600"
+                                        onClick={() => dispatch(setStoreHeading('Plants'))}
+                                    >
+                                        Plants
+                                    </NavLink>
+                                </li>
+                                <li onClick={() => setMenuOpen(false)}>
+                                    <NavLink
+                                        to="/plants"
+                                        className="block py-1 px-2 hover:text-red-600"
+                                        onClick={() => dispatch(setStoreHeading('Cactus'))}
+                                    >
+                                        Cactus
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        )}
+                    </li>
+
+                    <li onClick={() => setMenuOpen(false)}>
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                isActive ? 'text-red-500' : 'List'
+                            }
+                        >
+                            About Us
+                        </NavLink>
+                    </li>
+
+                    <li onClick={() => setMenuOpen(false)}>
+                        <NavLink
+                            to="/contact"
+                            className={({ isActive }) =>
+                                isActive ? 'text-red-500' : 'List'
+                            }
+                        >
+                            Contact Us
+                        </NavLink>
+                    </li>
+
+                    <li onClick={() => setMenuOpen(false)}>
+                        <NavLink
+                            to="/login"
+                            className={({ isActive }) =>
+                                isActive ? 'text-red-500' : 'List'
+                            }
+                        >
+                            My Account
+                        </NavLink>
+                    </li>
+                </ul>
+
+                {/* Cart & user icons */}
+                <div className="flex items-center gap-4 mt-4 lg:mt-0">
+                    <button
+                        onClick={() => {
+                            setCartSlow(true);
+                            setMenuOpen(false);
+                        }}
+                        className="flex items-center gap-2"
+                    >
+                        <span className="text-[#fc5f5f] font-semibold">
+                            ${totalAmount}.00
+                        </span>
+                        <span className="relative">
+                            <FaBagShopping className="text-[#fc5f5f] text-lg" />
+                            <span className="absolute -top-1 -right-2 w-4 h-4 text-[10px] bg-[#fc5f5f] rounded-full flex items-center justify-center">
+                                {cart.reduce((t, i) => t + i.quantity, 0)}
+                            </span>
+                        </span>
+                    </button>
+                    <FaUser className="text-lg" />
                 </div>
-            </nav>
-        </>
+            </div>
+        </nav>
     );
 };
 
