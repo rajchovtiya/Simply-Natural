@@ -28,5 +28,4 @@ const Store = ({ setColorchange }) => {
 
     );
 }
-
 export default Store;
