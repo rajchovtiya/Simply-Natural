@@ -21,7 +21,7 @@ const CartDescription = ({ setColorchange }) => {
         e.preventDefault();
     };
     return (
-        <div className='padding' id='top NavLink'>
+        <div className='padding'>
             <div className='min-h-[100vh] w-[100%] bg-white mt-28 py-3 px-3 2x:py-12 2xl:px-20'>
                 <div className='flex  justify-between gap-4 flex-wrap xl:flex-nowrap'>
                     <div className='w-[100%] xl:w-[80%] h-[400px]  overflow-hidden flex items-center justify-center bg-no-repeat xl:'>

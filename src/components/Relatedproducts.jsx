@@ -10,15 +10,13 @@ const Relatedproducts = ({ category }) => {
 
     return (
         <div>
-            <div className='flex items-center justify-between flex-wrap mt-9'>
+            <div className='flex items-center justify-between flex-wrap mt-9' id='top'>
                 {cartData.map((item, index) => {
                     {
                         return item.Heding === category ?
                             item.product.map((datas, index) => {
                                 return <div className='relative mt-5 cursor-pointer' key={index}>
-                                    <a href="#top" >
-                                        <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[300px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} onClick={() => OneCart(datas)} />
-                                    </a>
+                                    <img src={datas.img} alt="" className='sm:w-[100%] md:w-[250px] xl:w-[300px]' onMouseMove={() => SetChak(datas.id)} onMouseLeave={() => SetChak(null)} onClick={() => OneCart(datas)} />
                                     {datas.Sale == "true" ? <div className='absolute top-2 left-2 bg-[#ffffff] shadow-lg p-2 px-4 rounded-3xl'>Sale!</div> : ""}
                                     <p className='opacity-60 text-[13px] mt-4'>{datas.category}</p>
                                     <h5 className='text-[17px] font-normal mt-3'>{datas.product__title}</h5>

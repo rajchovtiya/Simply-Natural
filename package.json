@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rajchovtiya.github.io/Simply-Natural",
   "deploy": "vite build && gh-pages -d dist",
   "scripts": {
     "dev": "vite",
