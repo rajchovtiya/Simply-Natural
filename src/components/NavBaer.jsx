@@ -24,7 +24,7 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
             className={`padding flex items-center justify-between absolute w-full z-10 ${Colorchange}`}
         >
             {/* Logo */}
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+            <NavLink to="/Simply-Natural" onClick={() => setMenuOpen(false)}>
                 <div className="LOGO flex items-center gap-4">
                     <img src="/img/Logo1.svg" alt="Logo" className="max-w-[50px]" />
                     <h1 className="font-medium text-[20px]">Simply Natural</h1>

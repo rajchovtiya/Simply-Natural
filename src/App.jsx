@@ -25,9 +25,9 @@ function App() {
         <NavCart CartSlow={CartSlow} setCartSlow={setCartSlow} />
       )}
 
-      <div className={`relative ${CartSlow ? 'overflow-hidden h-screen' : 'overflow-auto h-screen'}`}>
+      <div className={`relative ${CartSlow ? 'overflow-hidden h-screen' : 'overflow-auto '}`}>
         <Routes>
-          <Route path="/" element={<Home setColorchange={setColorchange} CartSlow={CartSlow} />} />
+          <Route path="/Simply-Natural" element={<Home setColorchange={setColorchange} CartSlow={CartSlow} />} />
           <Route path="/about" element={<About setColorchange={setColorchange} />} />
           <Route path="/store" element={<Store setColorchange={setColorchange} />} />
           <Route path="/contact" element={<Contact setColorchange={setColorchange} />} />
