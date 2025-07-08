@@ -39,14 +39,14 @@ const NavBaer = ({ Colorchange, CartSlow, setCartSlow }) => {
             {/* Links */}
             <div
                 className={`${menuOpen
-                        ? 'flex flex-col absolute top-full left-0 w-full bg-white p-4 shadow-lg'
-                        : 'hidden lg:flex'
+                    ? 'flex flex-col absolute top-full left-0 w-full bg-white p-4 shadow-lg'
+                    : 'hidden lg:flex'
                     } lg:flex items-center gap-6`}
             >
                 <ul className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
                     <li onClick={() => setMenuOpen(false)}>
                         <NavLink
-                            to="/"
+                            to="/Simply-Natural"
                             className={({ isActive }) =>
                                 isActive ? 'text-red-500' : 'List'
                             }
