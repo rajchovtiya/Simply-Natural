@@ -9,7 +9,7 @@ const Featured = [
     {
         id: 2,
         HomeCart: "true",
-        img: "/img/Plants2.png",
+        img: "./img/Plants2.png",
         category: "Plants",
         product__title: "Boncellensis Secullant",
         product_details: "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -19,7 +19,7 @@ const Featured = [
     {
         id: 8,
         HomeCart: "true",
-        img: "/img/Cactus2.png",
+        img: "./img/Cactus2.png",
         category: "Cactus",
         product__title: "Cleistocactus",
         product_details: "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -29,7 +29,7 @@ const Featured = [
     {
         id: 9,
         HomeCart: "false",
-        img: "/img/Cactus3.png",
+        img: "./img/Cactus3.png",
         category: "Cactus",
         product__title: "Green Soil Lotus",
         product_details: "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",

@@ -5,7 +5,7 @@
       {
         "id": 1,
         "HomeCart": "false",
-        "img": "/img/Plants1.png",
+        "img": "./img/Plants1.png",
         "category": "Plants",
         "product__title": "Aluminum Plant",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -15,7 +15,7 @@
       {
         "id": 2,
         "HomeCart": "true",
-        "img": "/img/Plants2.png",
+        "img": "./img/Plants2.png",
         "category": "Plants",
         "product__title": "Boncellensis Secullant",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -26,7 +26,7 @@
       {
         "id": 3,
         "HomeCart": "true",
-        "img": "/img/Plants3.png",
+        "img": "./img/Plants3.png",
         "category": "Plants",
         "product__title": "Green Soil Lotus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -37,7 +37,7 @@
       {
         "id": 4,
         "HomeCart": "true",
-        "img": "/img/Plants4.png",
+        "img": "./img/Plants4.png",
         "category": "Plants",
         "product__title": "Money Plant",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -48,7 +48,7 @@
       {
         "id": 5,
         "HomeCart": "true",
-        "img": "/img/Plants5.png",
+        "img": "./img/Plants5.png",
         "category": "Plants",
         "product__title": "Piorro Quisquam",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -59,7 +59,7 @@
       {
         "id": 6,
         "HomeCart": "true",
-        "img": "/img/Plants6.png",
+        "img": "./img/Plants6.png",
         "category": "Plants",
         "product__title": "Rattle Snake Tail",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -75,7 +75,7 @@
       {
         "id": 7,
         "HomeCart": "false",
-        "img": "/img/Cactus1.png",
+        "img": "./img/Cactus1.png",
         "category": "Cactus",
         "product__title": "Ball Cactus",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -85,7 +85,7 @@
       {
         "id": 8,
         "HomeCart": "true",
-        "img": "/img/Cactus2.png",
+        "img": "./img/Cactus2.png",
         "category": "Cactus",
         "product__title": "Cleistocactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -97,7 +97,7 @@
       {
         "id": 9,
         "HomeCart": "false",
-        "img": "/img/Cactus3.png",
+        "img": "./img/Cactus3.png",
         "category": "Cactus",
         "product__title": "Star Cactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -109,7 +109,7 @@
       {
         "id": 10,
         "HomeCart": "false",
-        "img": "/img/Cactus4.png",
+        "img": "./img/Cactus4.png",
         "category": "Cactus",
         "product__title": "Mini Astrophytum",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -119,7 +119,7 @@
       {
         "id": 11,
         "HomeCart": "true",
-        "img": "/img/Cactus5.png",
+        "img": "./img/Cactus5.png",
         "category": "Cactus",
         "product__title": "Mini San Pedro Cactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -129,7 +129,7 @@
       {
         "id": 12,
         "HomeCart": "true",
-        "img": "/img/Cactus6.png",
+        "img": "./img/Cactus6.png",
         "category": "Cactus",
         "product__title": "Old Lady Cactus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",

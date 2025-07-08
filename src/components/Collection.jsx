@@ -4,19 +4,19 @@ import { LuRefreshCw } from "react-icons/lu";
 
 const collection_plants = [
     {
-        img: "/img/collection1.jpg",
+        img: "./img/collection1.jpg",
         name: "Beautiful Plant Varieties",
         title: "Luctus nec ullamcorper mattis, pulvinar dapibus leo.",
         button: "SEE COLLECTION"
     },
     {
-        img: "/img/collection2.jpg",
+        img: "./img/collection2.jpg",
         name: "Trendy Cactus Varieties",
         title: "Luctus nec ullamcorper mattis, pulvinar dapibus leo.",
         button: "SEE COLLECTION"
     },
     {
-        img: "/img/collection3.jpg",
+        img: "./img/collection3.jpg",
         name: "Gardening Accessories",
         title: "Luctus nec ullamcorper mattis, pulvinar dapibus leo.",
         button: "VISIT THE STORE"
@@ -52,7 +52,7 @@ const Collection = () => {
 
                 </div>
                 <div className='flex items-center justify-between gap-2 mt-24 flex-wrap'>
-                    {collection_plants.map((item, index) => {
+                    {collection_plants?.map((item, index) => {
                         return <div key={index} className='bg-[#EFEEF4] collection_box p-4 px-6 w-[368px] pb-16 rounded-xl'>
                             <div className='flex items-center justify-center'>
                                 <img src={item.img} alt="" className='max-w-[190px] md:max-w-[340px]' />
@@ -67,7 +67,7 @@ const Collection = () => {
                     })}
                 </div>
             </div>
-          
+
         </>
     );
 }

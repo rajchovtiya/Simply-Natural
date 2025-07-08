@@ -4,7 +4,7 @@ import uiReducer from './uiSlice';
 /* async thunk */
 export const fetchData = createAsyncThunk('shop/fetchData', async (_, { rejectWithValue }) => {
     try {
-        const res = await fetch('/PlantsData.json');
+        const res = await fetch(import.meta.env.BASE_URL + '/PlantsData.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
         return Array.isArray(json) ? json.map(({ Heding, product }) => ({ Heding, product })) : [];
