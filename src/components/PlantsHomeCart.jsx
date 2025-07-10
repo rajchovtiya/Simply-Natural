@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const PlantsHomeCart = () => {
     const [Chak, SetChak] = useState(null)
     const { addCart, OneCart } = useCartActions();
-  const cartData = useSelector(state => state.shop.products); // or your correct path
+    const cartData = useSelector(state => state.shop.products); // or your correct path
 
 
     return (
@@ -17,7 +17,7 @@ const PlantsHomeCart = () => {
             <p className='text-center text-gray-700 mt-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div className='flex items-center justify-between flex-wrap mt-9'>
                 {cartData?.map((item, index) => {
-                    return item.product.map((datas, index) => {
+                    return item.product?.map((datas, index) => {
                         {
                             return datas.HomeCart === "true" ?
                                 <div className='relative mt-5 cursor-pointer' key={index}>

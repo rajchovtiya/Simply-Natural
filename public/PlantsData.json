@@ -5,7 +5,7 @@
       {
         "id": 1,
         "HomeCart": "false",
-        "img": "./img/Plants1.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant2-free-img-768x768.jpg",
         "category": "Plants",
         "product__title": "Aluminum Plant",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -15,7 +15,7 @@
       {
         "id": 2,
         "HomeCart": "true",
-        "img": "./img/Plants2.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant3-free-img-768x768.jpg",
         "category": "Plants",
         "product__title": "Boncellensis Secullant",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -26,7 +26,7 @@
       {
         "id": 3,
         "HomeCart": "true",
-        "img": "./img/Plants3.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant5-free-img-768x768.jpg",
         "category": "Plants",
         "product__title": "Green Soil Lotus",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -37,7 +37,7 @@
       {
         "id": 4,
         "HomeCart": "true",
-        "img": "./img/Plants4.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant1-free-img-768x768.jpg",
         "category": "Plants",
         "product__title": "Money Plant",
         "product_details": "Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt dignissimos parturient a. Adipisicing placeat quibusdam. Pretium diam ornare! Architecto occaecati tempor aptent cum nesciunt.",
@@ -48,7 +48,7 @@
       {
         "id": 5,
         "HomeCart": "true",
-        "img": "./img/Plants5.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant4-free-img.jpg",
         "category": "Plants",
         "product__title": "Piorro Quisquam",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
@@ -59,7 +59,7 @@
       {
         "id": 6,
         "HomeCart": "true",
-        "img": "./img/Plants6.png",
+        "img": "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/plant6-free-img.jpg",
         "category": "Plants",
         "product__title": "Rattle Snake Tail",
         "product_details": "Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores ta porro ame. Neque porro quisquam est, qui dolore ipsum quia dolor sit amet.",
